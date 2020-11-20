@@ -1,0 +1,22 @@
+<h2>주소 입력</h2>
+<form action="/shortened_urls/create", method="post" ,class="fo">
+    <input type="text" value="", name ="original_url"/>
+    <input type="submit"/>
+</form>
+<div class="container">
+	<table border = 1 width = 200 class ='table'>
+	<tr>
+	    <td>원래 주소</td>
+	    <td>짧은 주소</td>
+
+	</tr>
+	<% @urls.each do |url| %>
+	<tr>
+	    <td style='word-break:break-all'><%= link_to url.original_url, url.original_url%></td>
+	    <td><%="localhost:3000" + "/" +  url.short_url %></td>
+	</tr>
+	<% end %>
+	</table>
+	<%= paginate @urls %>
+
+</div>
