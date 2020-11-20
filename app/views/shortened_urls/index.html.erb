@@ -1,7 +1,8 @@
-<h2>주소 입력</h2>
-<form action="/shortened_urls/create", method="post" ,class="fo">
-    <input type="text" value="", name ="original_url"/>
-    <input type="submit"/>
+<form action="/shortened_urls/create", method="post", id="fo">
+    <input type="text" value="", name ="original_url", placeholder="Enter the link here" />
+    <div id="formbutton">
+    	<input type="submit", value="Short URL" />
+    </div>
 </form>
 <div class="container">
 	<table border = 1 width = 200 class ='table'>

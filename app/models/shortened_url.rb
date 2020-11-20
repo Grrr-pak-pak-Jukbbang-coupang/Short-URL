@@ -11,8 +11,8 @@ class ShortenedUrl < ApplicationRecord
 
     def generate_short_url
         url =([*('a'..'z'),*('0'..'9')]).sample(UNIQUE_ID_LENGTH).join
-        old_url = ShortenedUrl.where(short_url: url).last #where은 조건이고 .last는 주어진 조건과 일치하는 마지막 레코드를 찾음
-        if old_url.present? 
+        old_url = ShortenedUrl.where(short_url: url).last # where은 조건이고 .last는 주어진 조건과 일치하는 마지막 레코드를 찾음
+        if old_url.present? # blank랑 반대 blank는 안에 없어야하는데 present는 있어야 참
             self.generate_short_url
         else
             self.short_url = url

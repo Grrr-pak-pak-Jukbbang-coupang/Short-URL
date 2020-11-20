@@ -1,7 +1,27 @@
-<h2 style="text-align: center">Original url is: <%=	link_to @original_url, @original_url %></h2>
-<h2 style="text-align: center">shortened ulr is: <%= @short_url %></h2>
+
+<section id="content">
+  <h1>Your shortened URL</h1>
+  <p>Copy the shortened link and share it in messages, texts, posts, websites and other locations.</p>
+</section>
 
 
-<div class="link">
-	<%= link_to "Back", root_path %>
+<div id="urlbox">
+	<br>
+	<br>
+	<div id="formurl", style="max-width: 400px">
+		<input type="text" id="shorturl", value="<%= @short_url %>"></input>
+		<div id="formbutton">
+			<input type="button" data-clipboard-target="#shortenurl" class="copy" value="Copy URL" onclick="if (!window.__cfRLUnblockHandlers) return false; toggle_visibility('balloon');">
+		</div>
+	</div>
+
+	<div id="formurl", style="max-width: 400px display: block;">
+		<div id="baloon", style="display: none;">URL Copied</div>
+	</div>
+
+	<p class="boxtextleft">
+		Long URL: 
+		<%= link_to @original_url, @original_url %>
+	</p>
+
 </div>
