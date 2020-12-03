@@ -8,7 +8,6 @@ class ShortenedUrlsController < ApplicationController
     end
 
     def show
-        @url = ShortenedUrl.all
         redirect_to @url.sanitize_url
     end
 
@@ -33,7 +32,7 @@ class ShortenedUrlsController < ApplicationController
         @url = ShortenedUrl.find_by_short_url(params[:short_url])
         host = request.host_with_port #호스트 이름 가져오기
         @original_url = @url.sanitize_url #original url 한마디로 내가 입력한 긴주소
-        @short_url = host + '/' + @url.short_url #호스트명/단축된url
+        @short_url = [host, @url.short_url].join "/" #호스트명/단축된url
     end
 
     def fetch_original_url

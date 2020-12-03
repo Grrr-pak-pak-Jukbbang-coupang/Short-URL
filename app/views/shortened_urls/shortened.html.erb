@@ -11,7 +11,7 @@
 	<div id="formurl", style="max-width: 400px">
 		<input type="text" id="shorturl", value="<%= @short_url %>"></input>
 		<div id="formbutton">
-			<input type="button" data-clipboard-target="#shortenurl" class="copy" value="Copy URL" onclick="if (!window.__cfRLUnblockHandlers) return false; toggle_visibility('balloon');">
+			<input type="button" data-clipboard-action="copy" data-clipboard-target="#shorturl" class="copy" value="Copy URL">
 		</div>
 	</div>
 
@@ -22,6 +22,8 @@
 	<p class="boxtextleft">
 		Long URL: 
 		<%= link_to @original_url, @original_url %>
+		Short URL:
+		<%= link_to @short_url, @short_url, target: :_blank, rel: [:noopener, :noreferrer] %>
 	</p>
 
 </div>

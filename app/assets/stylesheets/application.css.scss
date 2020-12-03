@@ -37,6 +37,12 @@ p {
 }
 
 
+tr {
+	td {
+	
+	}
+}
+
 
 header {
 	text-align: center;
@@ -99,9 +105,17 @@ header {
 }
 
 
-
-
-
+.table {
+	tr {
+		td {
+			border-top: 1px solid #dee2e6;
+    		border-left: 1px solid #dee2e6;
+    		border-right: 1px solid #dee2e6;
+    		border-bottom: 1px solid #dee2e6;
+    		vertical-align: middle;
+		}
+	}
+}
 
 .link {
 	text-align: center;
@@ -190,6 +204,7 @@ header {
 	margin: 16px 0px;
 	a {
 		text-decoration: none;
+		word-break:break-all
 	}
 }
 
@@ -216,6 +231,12 @@ header {
 	    margin-left: -1px;
 	}
 }
+
+
+.pagination {
+	place-content: center;
+}
+
 
 
 

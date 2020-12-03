@@ -28,7 +28,7 @@ class ShortenedUrl < ApplicationRecord
     end
 
     def sanitize
-        self.original_url.strip! #   
+        self.original_url.strip! 
         self.sanitize_url = self.original_url.downcase.gsub(/(https?:\/\/)|(www\.)/, "")
         self.sanitize_url = "http://#{self.sanitize_url}" #original url을 저장 
     end
